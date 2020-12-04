@@ -13,3 +13,5 @@ add_compile_options(-g)
 
 add_library(number-stream-handler SHARED ${HANDLER_SRCS})
 target_link_libraries(number-stream-handler PRIVATE asampl-interface)
+
+install(TARGETS number-stream-handler LIBRARY DESTINATION handlers)
