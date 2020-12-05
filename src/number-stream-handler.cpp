@@ -5,6 +5,10 @@
 
 #include <handler_interface.h>
 
+#if HANDLER_INTERFACE_VERSION_MAJOR != 1
+#error "Handler requires interface version 1"
+#endif
+
 struct Download {
     std::string m_data;
 
