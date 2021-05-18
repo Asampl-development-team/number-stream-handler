@@ -7,8 +7,8 @@ extern "C" {
 #include <asampl-ffi/ffi.h>
 }
 
-#if ASAMPL_FFI_VERSION_MAJOR != 0
-#error "Handler requires interface version 0"
+#if ASAMPL_FFI_VERSION_MAJOR != 0 || ASAMPL_FFI_VERSION_MINOR != 2
+#error "Handler requires interface version 0.2"
 #endif
 
 struct Download {
@@ -49,7 +49,7 @@ struct Download {
         }
 
         AsaValueContainer* container = asa_alloc_container();
-        asa_new_double(value, container);
+        asa_new_number(value, container);
         container->timestamp = timestamp;
         asa_new_response_normal(container, &response);
         return response;
